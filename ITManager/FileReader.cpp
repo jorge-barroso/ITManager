@@ -1,12 +1,12 @@
 #include "stdafx.h"
 #include "FileReader.h"
 #include <iostream>
-FileReader::FileReader(std::experimental::filesystem::path &path) : path(path)
+Files::FileReader::FileReader(std::experimental::filesystem::path &path) : path(path)
 {
 	this->openStream();
 }
 
-FileReader::FileReader(std::string const& filename) : path(filename)
+Files::FileReader::FileReader(std::string const& filename) : path(filename)
 {
 	if (!std::experimental::filesystem::exists(path))
 	{
@@ -16,22 +16,22 @@ FileReader::FileReader(std::string const& filename) : path(filename)
 	this->openStream();
 }
 
-FileReader::~FileReader()
+Files::FileReader::~FileReader()
 {
 	this->fileStream.close();
 }
 
-void FileReader::openStream()
+void Files::FileReader::openStream()
 {
 	this->fileStream = std::ifstream(this->path.c_str());
 }
 
-int FileReader::read()
+int Files::FileReader::read()
 {
 	return this->fileStream.get();
 }
 
-bool FileReader::readLine(std::string &line)
+bool Files::FileReader::readLine(std::string &line)
 {
 	if (std::getline(this->fileStream, line))
 		return true;
@@ -39,7 +39,7 @@ bool FileReader::readLine(std::string &line)
 		return false;
 }
 
-std::string FileReader::readAll()
+std::string Files::FileReader::readAll()
 {
 	std::string fileContents;
 

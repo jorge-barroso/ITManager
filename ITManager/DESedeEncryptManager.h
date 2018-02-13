@@ -1,10 +1,12 @@
 #pragma once
 #include "EncryptManager.h"
-class DESedeEncryptManager :
-	public EncryptManager
+namespace Encryption
 {
-public:
-	DESedeEncryptManager();
-	~DESedeEncryptManager();
-};
-
+	class DESedeEncryptManager :
+		public EncryptManager
+	{
+	public:
+		DESedeEncryptManager();
+		~DESedeEncryptManager();
+	};
+}

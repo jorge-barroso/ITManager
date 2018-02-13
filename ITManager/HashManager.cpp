@@ -2,11 +2,11 @@
 #include "HashManager.h"
 
 
-HashManager::HashManager()
+Hash::HashManager::HashManager()
 {
 }
 
 
-HashManager::~HashManager()
+Hash::HashManager::~HashManager()
 {
 }

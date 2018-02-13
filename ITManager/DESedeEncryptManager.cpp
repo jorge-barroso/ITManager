@@ -2,11 +2,11 @@
 #include "DESedeEncryptManager.h"
 
 
-DESedeEncryptManager::DESedeEncryptManager()
+Encryption::DESedeEncryptManager::DESedeEncryptManager()
 {
 }
 
 
-DESedeEncryptManager::~DESedeEncryptManager()
+Encryption::DESedeEncryptManager::~DESedeEncryptManager()
 {
 }

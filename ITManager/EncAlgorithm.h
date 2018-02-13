@@ -1,8 +1,10 @@
 #pragma once
-enum class EncAlgorithm
+namespace Encryption
 {
-	AES = 1,
-	DESede,
-	BCrypt
-};
-
+	enum class EncAlgorithm
+	{
+		AES = 1,
+		DESede,
+		BCrypt
+	};
+}

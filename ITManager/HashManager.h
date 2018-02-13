@@ -1,11 +1,13 @@
 #pragma once
 #include <string>
-class HashManager
+namespace Hash
 {
-public:
-	HashManager();
-	~HashManager();
-	virtual std::string hash() = 0;
-	virtual bool matches() = 0;
-};
-
+	class HashManager
+	{
+	public:
+		HashManager();
+		~HashManager();
+		virtual std::string hash() = 0;
+		virtual bool matches() = 0;
+	};
+}

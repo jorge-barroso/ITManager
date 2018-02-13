@@ -9,7 +9,7 @@ Properties::Properties(){}
 
 Properties::~Properties(){}
 
-void Properties::load(FileReader &reader)
+void Properties::load(Files::FileReader &reader)
 {
 	std::string line;
 	size_t pos;
@@ -22,11 +22,11 @@ void Properties::load(FileReader &reader)
 
 void Properties::save()
 {
-	FileWriter writer(this->propertiesFile);
+	Files::FileWriter writer(this->propertiesFile);
 	this->save(writer);
 }
 
-void Properties::save(FileWriter &fileWriter)
+void Properties::save(Files::FileWriter &fileWriter)
 {
 	for (const auto& entry : this->properties)
 	{

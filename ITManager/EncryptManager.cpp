@@ -1,10 +1,10 @@
 #include "stdafx.h"
 #include "EncryptManager.h"
 
-EncryptManager::EncryptManager()
+Encryption::EncryptManager::EncryptManager()
 {
 }
 
-EncryptManager::~EncryptManager()
+Encryption::EncryptManager::~EncryptManager()
 {
 }

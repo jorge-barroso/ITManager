@@ -1,10 +1,12 @@
 #pragma once
 #include "HashManager.h"
-class BcryptHashManager :
-	public HashManager
+namespace Hash
 {
-public:
-	BcryptHashManager();
-	~BcryptHashManager();
-};
-
+	class BcryptHashManager :
+		public HashManager
+	{
+	public:
+		BcryptHashManager();
+		~BcryptHashManager();
+	};
+}

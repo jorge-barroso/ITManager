@@ -2,11 +2,11 @@
 #include "BcryptHashManager.h"
 
 
-BcryptHashManager::BcryptHashManager()
+Hash::BcryptHashManager::BcryptHashManager()
 {
 }
 
 
-BcryptHashManager::~BcryptHashManager()
+Hash::BcryptHashManager::~BcryptHashManager()
 {
 }
