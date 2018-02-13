@@ -6,7 +6,7 @@ namespace Encryption
 		public EncryptManager
 	{
 	public:
-		DESedeEncryptManager();
+		DESedeEncryptManager(char const* key_data, unsigned char const* salt, const uint16_t nrounds);
 		~DESedeEncryptManager();
 	};
 }
