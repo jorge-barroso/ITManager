@@ -6,7 +6,7 @@
 class Properties
 {
 public:
-	Properties();
+	explicit Properties();
 	~Properties();
 	void load(Files::FileReader &reader);
 	void save();

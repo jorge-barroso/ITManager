@@ -160,6 +160,7 @@
     <ClInclude Include="BcryptHashManager.h" />
     <ClInclude Include="Database.h" />
     <ClInclude Include="DESedeEncryptManager.h" />
+    <ClInclude Include="DesWeakKeyException.h" />
     <ClInclude Include="EncAlgorithm.h" />
     <ClInclude Include="EncryptManager.h" />
     <ClInclude Include="Environment.h" />
@@ -182,6 +183,7 @@
     <ClCompile Include="BcryptHashManager.cpp" />
     <ClCompile Include="Database.cpp" />
     <ClCompile Include="DESedeEncryptManager.cpp" />
+    <ClCompile Include="DesWeakKeyException.cpp" />
     <ClCompile Include="EncryptManager.cpp" />
     <ClCompile Include="Environment.cpp" />
     <ClCompile Include="FileReader.cpp" />

@@ -105,6 +105,9 @@
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DesWeakKeyException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -160,6 +163,9 @@
     </ClCompile>
     <ClCompile Include="S3Manager.cpp">
       <Filter>Source Files\AWS</Filter>
+    </ClCompile>
+    <ClCompile Include="DesWeakKeyException.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

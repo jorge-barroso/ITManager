@@ -7,8 +7,8 @@ namespace Files
 	class FileReader
 	{
 	public:
-		FileReader(std::experimental::filesystem::path &path);
-		FileReader(std::string const& fileName);
+		explicit FileReader(std::experimental::filesystem::path &path);
+		explicit FileReader(std::string const& fileName);
 		~FileReader();
 		int read();
 		bool readLine(std::string &line);
