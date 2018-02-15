@@ -1,7 +1,5 @@
 #include "stdafx.h"
-#include "Base64.h"
 #include "AESEncryptManager.h"
-#include <iostream>
 
 inline  uint16_t message_size(const char * key, uint16_t pos)
 {
@@ -9,9 +7,10 @@ inline  uint16_t message_size(const char * key, uint16_t pos)
 }
 
 //TODO test if key data builds the iv and check how to make sure we can decrypt by keeping the iv (if it's built through key_data, just keep key_data)
-Encryption::AESEncryptManager::AESEncryptManager(char const* key_data, unsigned char const* salt, const uint16_t nrounds)
+Encryption::AESEncryptManager::AESEncryptManager(const unsigned char *key_data, const unsigned char *salt, const uint16_t nrounds)
+	: Encryption::EncryptManager(EVP_aes_256_cbc(), key_data, salt, nrounds)
 {
-	int i = EVP_BytesToKey(EVP_aes_256_cbc(), EVP_sha1(), salt, (unsigned char *)key_data, strlen(key_data), nrounds, this->key, this->iv );
+	/*const int&& i = EVP_BytesToKey(EVP_aes_256_cbc(), EVP_sha1(), salt, key_data, 32, nrounds, this->key, this->iv );
 
 	EVP_CIPHER_CTX_init(&this->en);
 	EVP_EncryptInit_ex(&this->en, EVP_aes_256_cbc(), NULL, this->key, this->iv);
@@ -19,41 +18,35 @@ Encryption::AESEncryptManager::AESEncryptManager(char const* key_data, unsigned 
 	EVP_DecryptInit_ex(&this->de, EVP_aes_256_cbc(), NULL, this->key, this->iv);
 
 	std::cout << this->key << std::endl;
-	std::cout << this->iv << std::endl;
+	std::cout << this->iv << std::endl;*/
 }
 
-Encryption::AESEncryptManager::~AESEncryptManager()
+/*Encryption::AESEncryptManager::~AESEncryptManager()
 {
 	EVP_CIPHER_CTX_cleanup(&this->en);
 
 	EVP_CIPHER_CTX_cleanup(&this->de);
 }
 
-std::string Encryption::AESEncryptManager::encrypt(const char *key)
+std::string Encryption::AESEncryptManager::encrypt(const unsigned char * key, uint16_t key_size)
 {
-	int keyLen = strlen(key) + 1;
+	int keyLen = sizeof(key) + 1;
 	int cipherLen = keyLen + 256;
-	unsigned char *ciphertext = (unsigned char*)malloc(cipherLen);
+	unsigned char * ciphertext = new unsigned char[cipherLen];
 
 	EVP_EncryptInit_ex(&this->en, NULL, NULL, NULL, NULL);
 
-	EVP_EncryptUpdate(&this->en, ciphertext, &cipherLen, (unsigned char *)key, keyLen);
+	EVP_EncryptUpdate(&this->en, ciphertext, &cipherLen, key, keyLen);
 
 	EVP_EncryptFinal_ex(&this->en, ciphertext, &cipherLen);
 
-	return Base64::encode(this->iv, strlen((const char *)this->iv))+":"+Base64::encode(ciphertext, cipherLen);
+	return Base64::encode(this->iv, sizeof(this->iv)) + this->SPLIT_TOKEN + Base64::encode(ciphertext, cipherLen);
 }
 
-std::string Encryption::AESEncryptManager::decrypt(const char *key)
+std::string Encryption::AESEncryptManager::decrypt(char *key)
 {
-	const uint16_t pos = (uint16_t)strchr(key, ':');
+	const char * iv = strtok(key, &this->SPLIT_TOKEN);
 
-	char * iv = new char[pos + 1];
-	strncpy_s(iv, pos + 1, key, 0);
-
-	char * message = new char[message_size(key, pos)];
-	strncpy_s(message, message_size(key, pos), key, pos+1);
-
-	std::cout << iv << " || " << message << std::endl;
+	std::cout << iv << " || " << key << std::endl;
 	return "";
-}
+}*/
