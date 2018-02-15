@@ -108,6 +108,9 @@
     <ClInclude Include="DesWeakKeyException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ConfigOptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -165,6 +168,9 @@
       <Filter>Source Files\AWS</Filter>
     </ClCompile>
     <ClCompile Include="DesWeakKeyException.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigOptions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -2,7 +2,7 @@
 #include "EncryptManager.h"
 #include <iostream>
 
-Encryption::EncryptManager::EncryptManager(const EVP_CIPHER* const unsigned char *key_data, const unsigned char *salt, const uint16_t nrounds)
+Encryption::EncryptManager::EncryptManager(const EVP_CIPHER* cipherMethod, const unsigned char *key_data, const unsigned char *salt, const uint16_t nrounds)
 {
 	const int&& i = EVP_BytesToKey(cipherMethod, EVP_sha1(), salt, key_data, 32, nrounds, this->key, this->iv);
 

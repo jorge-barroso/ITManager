@@ -158,6 +158,7 @@
     <ClInclude Include="AESEncryptManager.h" />
     <ClInclude Include="Base64.h" />
     <ClInclude Include="BcryptHashManager.h" />
+    <ClInclude Include="ConfigOptions.h" />
     <ClInclude Include="Database.h" />
     <ClInclude Include="DESedeEncryptManager.h" />
     <ClInclude Include="DesWeakKeyException.h" />
@@ -181,6 +182,7 @@
     <ClCompile Include="AESEncryptManager.cpp" />
     <ClCompile Include="Base64.cpp" />
     <ClCompile Include="BcryptHashManager.cpp" />
+    <ClCompile Include="ConfigOptions.cpp" />
     <ClCompile Include="Database.cpp" />
     <ClCompile Include="DESedeEncryptManager.cpp" />
     <ClCompile Include="DesWeakKeyException.cpp" />
