@@ -1,4 +1,4 @@
-#pragma once
+#pragma db object
 enum class Region
 {
 	CA_CENTRAL_1,

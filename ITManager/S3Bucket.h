@@ -1,4 +1,4 @@
-#pragma once
+#pragma db object
 #include <cstdint>
 #include <string>
 class S3Bucket

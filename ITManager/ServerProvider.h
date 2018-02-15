@@ -1,4 +1,4 @@
-#pragma once
+#pragma db object
 enum class ServerProvider
 {
 	AWS,

@@ -1,4 +1,4 @@
-#pragma once
+#pragma db object
 #include <vector>
 #include "Instance.h"
 #include "S3Bucket.h"

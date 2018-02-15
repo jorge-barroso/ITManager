@@ -1,4 +1,4 @@
-#pragma once
+#pragma db object
 class Instance
 {
 public:

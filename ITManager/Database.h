@@ -1,6 +1,7 @@
-#pragma once
+#pragma db object
 #include <string>
 #include <cstdlib>
+#include "odb\core.hxx"
 class Database
 {
 public:
@@ -26,7 +27,12 @@ public:
 	
 	~Database();
 private:
+	friend class odb::access;
+	Database() {}
+
+	#pragma db id
 	uint16_t id;
+	
 	std::string url;
 	uint16_t port;
 	std::string user;
