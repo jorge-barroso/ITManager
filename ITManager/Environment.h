@@ -4,24 +4,26 @@
 #include "S3Bucket.h"
 #include "Database.h"
 #include "odb\core.hxx"
-class Environment
+namespace Models
 {
-public:
-	Environment(std::vector<Database> const& = std::vector<Database>(3),
-				std::vector<S3Bucket> const& = std::vector<S3Bucket>(5),
-				std::vector<Instance> const& = std::vector<Instance>(3));
+	class Environment
+	{
+	public:
+		Environment(std::vector<Models::Database> const& = std::vector<Models::Database>(3),
+			std::vector<Models::S3Bucket> const& = std::vector<Models::S3Bucket>(5),
+			std::vector<Models::Instance> const& = std::vector<Models::Instance>(3));
 
-	~Environment();
-	std::vector<Database> getDatabases();
-	std::vector<S3Bucket> getS3Buckets();
-	std::vector<Instance> getInstances();
-	
-private:
-	friend class odb::access;
-	Environment() {}
+		~Environment();
+		std::vector<Models::Database> getDatabases();
+		std::vector<Models::S3Bucket> getS3Buckets();
+		std::vector<Models::Instance> getInstances();
 
-	std::vector<Database> databases;
-	std::vector<S3Bucket> s3Buckets;
-	std::vector<Instance> instances;
-};
+	private:
+		friend class odb::access;
+		Environment() {}
 
+		std::vector<Models::Database> databases;
+		std::vector<Models::S3Bucket> s3Buckets;
+		std::vector<Models::Instance> instances;
+	};
+}

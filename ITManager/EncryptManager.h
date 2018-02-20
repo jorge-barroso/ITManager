@@ -8,9 +8,9 @@ namespace Encryption
 	class EncryptManager
 	{
 	public:
-		explicit EncryptManager(const EVP_CIPHER* cipherMethod, const unsigned char *key_data, const unsigned char *salt, const uint16_t nrounds);
+		EncryptManager(const EVP_CIPHER* cipherMethod, const unsigned char *key_data, const unsigned char *salt, const uint16_t nrounds);
 		virtual~EncryptManager() = 0;
-		std::string encrypt(const unsigned char * key, uint16_t key_size);
+		std::string encrypt(const unsigned char * key, size_t key_size);
 		std::string decrypt(char * ciphertext);
 	private:
 		unsigned char key[32]{};

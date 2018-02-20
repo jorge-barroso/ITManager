@@ -19,7 +19,7 @@ Encryption::EncryptManager::~EncryptManager()
 {
 }
 
-std::string Encryption::EncryptManager::encrypt(const unsigned char * key, uint16_t key_size)
+std::string Encryption::EncryptManager::encrypt(const unsigned char * key, size_t key_size)
 {
 	int keyLen = sizeof(key) + 1;
 	int cipherLen = keyLen + 256;
@@ -36,8 +36,9 @@ std::string Encryption::EncryptManager::encrypt(const unsigned char * key, uint1
 
 std::string Encryption::EncryptManager::decrypt(char * ciphertext)
 {
-	const char * iv = strtok(ciphertext, &this->SPLIT_TOKEN);
 
-	std::cout << iv << " || " << key << std::endl;
+	const char * iv = strtok_s(ciphertext, &this->SPLIT_TOKEN, new char *);//strtok(ciphertext, &this->SPLIT_TOKEN);
+
+	std::cout << iv << " || " << ciphertext << std::endl;
 	return "";
 }

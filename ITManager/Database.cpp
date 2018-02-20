@@ -3,74 +3,78 @@
 
 
 
-Database::Database(uint16_t const id, std::string const& url, uint16_t const port, std::string const& user, std::string const& password, std::string const& schema)
-{
+Models::Database::Database(std::string const& url, uint16_t const port, std::string const& user, std::string const& password, std::string const& schema)
+	:
+	url(url),
+	port(port),
+	user(user),
+	password(password),
+	schema(schema){}
 
-}
+Models::Database::~Database(){}
 
-Database::~Database()
-{
-	
-}
-
-Database Database::setId(uint16_t id)
+Models::Database Models::Database::setId(uint16_t id)
 {
 	this->id = id;
 	return *this;
 }
 
-uint16_t Database::getId()
+uint16_t Models::Database::getId()
 {
 	return this->id;
 }
 
-Database Database::setUrl(std::string url)
+Models::Database Models::Database::setUrl(std::string const& url)
 {
 	this->url = url;
 	return *this;
 }
 
-std::string Database::getUrl()
+std::string Models::Database::getUrl()
 {
 	return this->url;
 }
 
-Database Database::setPort(uint16_t port)
+Models::Database Models::Database::setPort(uint16_t port)
 {
+	this->port = port;
 	return *this;
 }
 
-uint16_t Database::getPort()
+uint16_t Models::Database::getPort()
 {
 	return this->port;
 }
 
-Database Database::setUser(std::string user)
+Models::Database Models::Database::setUser(std::string const& user)
 {
+	this->user = user;
 	return *this;
 }
 
-std::string Database::getUser()
+std::string Models::Database::getUser()
 {
-	return std::string();
+	return this->user;
 }
 
-Database Database::setPassword(std::string password)
+Models::Database Models::Database::setPassword(std::string const& password)
 {
+	this->password = password;
 	return *this;
 }
 
-std::string Database::getPassword()
+std::string Models::Database::getPassword()
 {
 	return this->password;
 }
 
-Database Database::setSchema(std::string schema)
+Models::Database Models::Database::setSchema(std::string const& schema)
 {
+	this->schema = schema;
 	return *this;
 }
 
-std::string Database::getSchema()
+std::string Models::Database::getSchema()
 {
 	return this->schema;
 }

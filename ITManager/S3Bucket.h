@@ -2,20 +2,31 @@
 #include <cstdint>
 #include <string>
 #include "odb\core.hxx"
-class S3Bucket
+#include "Region.h"
+namespace Models
 {
-public:
-	S3Bucket(std::string const&, uint16_t const);
-	~S3Bucket();
-	uint16_t id();
-	std::string key();
-private:
+	class S3Bucket
+	{
+	public:
+		S3Bucket(std::string const& key, const Region region);
+		~S3Bucket();
 
-	friend class odb::access;
-	S3Bucket() {}
+		uint16_t getId();
 
-	#pragma db id
-	uint16_t id;
-	std::string key;
-};
+		std::string getKey();
+		Models::S3Bucket setKey(std::string const& key);
 
+		Region getRegion();
+	private:
+
+		friend class odb::access;
+		S3Bucket() {}
+
+		#pragma db id
+		uint16_t id;
+
+		std::string key;
+
+		Region region;
+	};
+}

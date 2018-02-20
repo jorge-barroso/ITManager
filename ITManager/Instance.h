@@ -1,14 +1,29 @@
 #pragma db object
+#include <cstdlib>
 #include "odb\core.hxx"
-class Instance
+#include "ServerProvider.h"
+namespace Models
 {
-public:
-	~Instance();
-private:
-	friend class odb::access;
-	Instance() {}
+	class Instance
+	{
+	public:
+		~Instance();
+		uint16_t getId();
 
-	#pragma db id
-	uint16_t id;
-};
+		std::string getAlias();
+		Models::Instance setAlias(std::string const& alias);
 
+		ServerProvider getServerProvider();
+		Models::Instance setServerProvider(ServerProvider provider);
+	private:
+		friend class odb::access;
+		Instance() {}
+
+		#pragma db id
+		uint16_t id;
+
+		std::string alias;
+
+		ServerProvider provider;
+	};
+}
