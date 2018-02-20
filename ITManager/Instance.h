@@ -1,8 +1,14 @@
 #pragma db object
+#include "odb\core.hxx"
 class Instance
 {
 public:
-	Instance();
 	~Instance();
+private:
+	friend class odb::access;
+	Instance() {}
+
+	#pragma db id
+	uint16_t id;
 };
 

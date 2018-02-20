@@ -111,6 +111,9 @@
     <ClInclude Include="ConfigOptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="InstanceManager.h">
+      <Filter>Header Files\AWS</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -172,6 +175,9 @@
     </ClCompile>
     <ClCompile Include="ConfigOptions.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InstanceManager.cpp">
+      <Filter>Source Files\AWS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

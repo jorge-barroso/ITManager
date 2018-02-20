@@ -14,12 +14,12 @@ S3Bucket::~S3Bucket()
 {
 }
 
-uint16_t S3Bucket::getId()
+uint16_t S3Bucket::id()
 {
 	return this->id;
 }
 
-std::string S3Bucket::getKey()
+std::string S3Bucket::key()
 {
 	return this->key;
 }

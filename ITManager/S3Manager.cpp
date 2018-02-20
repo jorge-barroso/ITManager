@@ -2,13 +2,13 @@
 #include "S3Manager.h"
 
 
-AWS::S3Manager::S3Manager(std::string const& accessKey, std::string const& secretAccessKey, std::string const& region) : regionName(region)
+AWS::S3Manager::S3Manager(std::string const& accessKey, std::string const& secretAccessKey, std::string const& region) : regionName(Aws::Utils::StringUtils::to_string(region))
 {
 	Aws::InitAPI(this->options);
 	//this->s3Client = Aws::S3::S3Client(Aws::Auth::AWSCredentials(accessKey, secretAccessKey));
 	Aws::Client::ClientConfiguration config;
 	config.region = this->regionName;
-	this->s3Client = Aws::S3::S3Client(Aws::Auth::AWSCredentials(accessKey, secretAccessKey), config);
+	this->s3Client = Aws::S3::S3Client(Aws::Auth::AWSCredentials(Aws::Utils::StringUtils::to_string(accessKey), Aws::Utils::StringUtils::to_string(secretAccessKey)), config);
 }
 
 
@@ -27,7 +27,8 @@ bool AWS::S3Manager::createBucket(std::string const & bucketName)
 
 	//create and configure the request
 	Aws::S3::Model::CreateBucketRequest request;
-	request.SetBucket(bucketName);
+	const Aws::String&& bucket = Aws::Utils::StringUtils::to_string(bucketName);
+	request.SetBucket(bucket);
 	// TODO allow to make public request.SetGrantRead();
 	// TODO recover if main S3Client config doesn't work request.SetCreateBucketConfiguration(configuration);
 
@@ -45,7 +46,9 @@ bool AWS::S3Manager::cleanupBucket(std::string const & bucketName)
 
 bool AWS::S3Manager::deleteBucket(std::string const & bucketName)
 {
-	Aws::S3::Model::DeleteBucketOutcome const&& outcome = this->s3Client.DeleteBucket(Aws::S3::Model::DeleteBucketRequest().WithBucket(bucketName));
+	const Aws::String&& bucket = Aws::Utils::StringUtils::to_string(bucketName);
+
+	Aws::S3::Model::DeleteBucketOutcome const&& outcome = this->s3Client.DeleteBucket(Aws::S3::Model::DeleteBucketRequest().WithBucket(bucket));
 
 	return outcome.IsSuccess();
 }
@@ -53,7 +56,10 @@ bool AWS::S3Manager::deleteBucket(std::string const & bucketName)
 bool AWS::S3Manager::bucketExists(std::string const& bucketName)
 {
 	Aws::S3::Model::HeadBucketRequest request;
-	request.SetBucket(bucketName);
+
+	const Aws::String&& bucket = Aws::Utils::StringUtils::to_string(bucketName);
+
+	request.SetBucket(bucket);
 
 	Aws::S3::Model::HeadBucketOutcome outcome = this->s3Client.HeadBucket(request);
 

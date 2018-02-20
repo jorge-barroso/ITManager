@@ -3,6 +3,7 @@
 #include "Instance.h"
 #include "S3Bucket.h"
 #include "Database.h"
+#include "odb\core.hxx"
 class Environment
 {
 public:
@@ -16,6 +17,9 @@ public:
 	std::vector<Instance> getInstances();
 	
 private:
+	friend class odb::access;
+	Environment() {}
+
 	std::vector<Database> databases;
 	std::vector<S3Bucket> s3Buckets;
 	std::vector<Instance> instances;

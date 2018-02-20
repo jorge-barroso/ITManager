@@ -169,6 +169,7 @@
     <ClInclude Include="FileWriter.h" />
     <ClInclude Include="HashManager.h" />
     <ClInclude Include="Instance.h" />
+    <ClInclude Include="InstanceManager.h" />
     <ClInclude Include="Properties.h" />
     <ClInclude Include="Region.h" />
     <ClInclude Include="resource.h" />
@@ -192,6 +193,7 @@
     <ClCompile Include="FileWriter.cpp" />
     <ClCompile Include="HashManager.cpp" />
     <ClCompile Include="Instance.cpp" />
+    <ClCompile Include="InstanceManager.cpp" />
     <ClCompile Include="ITManager.cpp" />
     <ClCompile Include="Properties.cpp" />
     <ClCompile Include="Region.cpp" />
