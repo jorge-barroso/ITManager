@@ -90,9 +90,6 @@
     <ClInclude Include="Instance.h">
       <Filter>Header Files\DataModels</Filter>
     </ClInclude>
-    <ClInclude Include="Region.h">
-      <Filter>Header Files\DataModels</Filter>
-    </ClInclude>
     <ClInclude Include="S3Bucket.h">
       <Filter>Header Files\DataModels</Filter>
     </ClInclude>
@@ -113,6 +110,9 @@
     </ClInclude>
     <ClInclude Include="InstanceManager.h">
       <Filter>Header Files\AWS</Filter>
+    </ClInclude>
+    <ClInclude Include="Regions.h">
+      <Filter>Header Files\DataModels</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +178,9 @@
     </ClCompile>
     <ClCompile Include="InstanceManager.cpp">
       <Filter>Source Files\AWS</Filter>
+    </ClCompile>
+    <ClCompile Include="Regions.cpp">
+      <Filter>Source Files\DataModels</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

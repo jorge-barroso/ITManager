@@ -6,13 +6,14 @@
 #include <aws/s3/model/DeleteBucketRequest.h>
 #include <aws/s3/model/HeadBucketRequest.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include "Regions.h"
 
 namespace AWS
 {
 	class S3Manager
 	{
 	public:
-		S3Manager(std::string const& accessKey, std::string const& secretAccessKey, std::string const& region);
+		S3Manager(std::string const& accessKey, std::string const& secretAccessKey, Regions::Region const& region);
 		~S3Manager();
 		bool createBucket(std::string const& bucketName);
 		bool cleanupBucket(std::string const& bucketName);

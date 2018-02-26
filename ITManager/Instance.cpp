@@ -16,14 +16,25 @@ uint16_t Models::Instance::getId()
 	return this->id;
 }
 
-std::string Models::Instance::getAlias()
+std::string Models::Instance::getName()
 {
-	return this->alias;
+	return this->name;
 }
 
-Models::Instance Models::Instance::setAlias(std::string const & alias)
+Models::Instance Models::Instance::setName(std::string const & name)
 {
-	this->alias = alias;
+	this->name = name;
+	return *this;
+}
+
+std::string Models::Instance::getInstanceId()
+{
+	return this->instanceId;
+}
+
+Models::Instance Models::Instance::setInstanceId(const std::string & instanceId)
+{
+	this->instanceId = instanceId;
 	return *this;
 }
 

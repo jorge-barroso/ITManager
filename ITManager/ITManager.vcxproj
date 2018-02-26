@@ -171,7 +171,7 @@
     <ClInclude Include="Instance.h" />
     <ClInclude Include="InstanceManager.h" />
     <ClInclude Include="Properties.h" />
-    <ClInclude Include="Region.h" />
+    <ClInclude Include="Regions.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="S3Bucket.h" />
     <ClInclude Include="S3Manager.h" />
@@ -197,6 +197,7 @@
     <ClCompile Include="ITManager.cpp" />
     <ClCompile Include="Properties.cpp" />
     <ClCompile Include="Region.cpp" />
+    <ClCompile Include="Regions.cpp" />
     <ClCompile Include="S3Bucket.cpp" />
     <ClCompile Include="S3Manager.cpp" />
     <ClCompile Include="ServerProvider.cpp" />

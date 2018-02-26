@@ -10,8 +10,11 @@ namespace Models
 		~Instance();
 		uint16_t getId();
 
-		std::string getAlias();
-		Models::Instance setAlias(std::string const& alias);
+		std::string getName();
+		Models::Instance setName(std::string const& name);
+
+		std::string getInstanceId();
+		Models::Instance setInstanceId(const std::string &instanceId);
 
 		ServerProvider getServerProvider();
 		Models::Instance setServerProvider(ServerProvider provider);
@@ -22,7 +25,9 @@ namespace Models
 		#pragma db id
 		uint16_t id;
 
-		std::string alias;
+		std::string name;
+
+		std::string instanceId;
 
 		ServerProvider provider;
 	};
