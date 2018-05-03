@@ -165,6 +165,9 @@
     <ClInclude Include="EncAlgorithm.h" />
     <ClInclude Include="EncryptManager.h" />
     <ClInclude Include="Environment.h" />
+    <ClInclude Include="EnvironmentDatabase.h" />
+    <ClInclude Include="EnvironmentInstance.h" />
+    <ClInclude Include="EnvironmentS3Bucket.h" />
     <ClInclude Include="FileReader.h" />
     <ClInclude Include="FileWriter.h" />
     <ClInclude Include="HashManager.h" />
@@ -175,7 +178,7 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="S3Bucket.h" />
     <ClInclude Include="S3Manager.h" />
-    <ClInclude Include="ServerProvider.h" />
+    <ClInclude Include="ServerProviders.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -189,6 +192,9 @@
     <ClCompile Include="DesWeakKeyException.cpp" />
     <ClCompile Include="EncryptManager.cpp" />
     <ClCompile Include="Environment.cpp" />
+    <ClCompile Include="EnvironmentDatabase.cpp" />
+    <ClCompile Include="EnvironmentInstance.cpp" />
+    <ClCompile Include="EnvironmentS3Bucket.cpp" />
     <ClCompile Include="FileReader.cpp" />
     <ClCompile Include="FileWriter.cpp" />
     <ClCompile Include="HashManager.cpp" />
@@ -196,11 +202,10 @@
     <ClCompile Include="InstanceManager.cpp" />
     <ClCompile Include="ITManager.cpp" />
     <ClCompile Include="Properties.cpp" />
-    <ClCompile Include="Region.cpp" />
     <ClCompile Include="Regions.cpp" />
     <ClCompile Include="S3Bucket.cpp" />
     <ClCompile Include="S3Manager.cpp" />
-    <ClCompile Include="ServerProvider.cpp" />
+    <ClCompile Include="ServerProviders.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

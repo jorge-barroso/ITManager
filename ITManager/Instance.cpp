@@ -2,11 +2,6 @@
 #include "Instance.h"
 
 
-Models::Instance::Instance()
-{
-}
-
-
 Models::Instance::~Instance()
 {
 }
@@ -38,12 +33,12 @@ Models::Instance Models::Instance::setInstanceId(const std::string & instanceId)
 	return *this;
 }
 
-ServerProvider Models::Instance::getServerProvider()
+ServerProviders::ServerProvider Models::Instance::getServerProvider()
 {
 	return this->provider;
 }
 
-Models::Instance Models::Instance::setServerProvider(ServerProvider provider)
+Models::Instance Models::Instance::setServerProvider(ServerProviders::ServerProvider provider)
 {
 	this->provider = provider;
 	return *this;

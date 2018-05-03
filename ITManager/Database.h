@@ -14,7 +14,7 @@ namespace Models
 		uint16_t getId();
 
 		Database setAlias(std::string const& alias);
-		std::string getUrl();
+		std::string getAlias();
 
 		Database setUrl(std::string const& url);
 		std::string getUrl();

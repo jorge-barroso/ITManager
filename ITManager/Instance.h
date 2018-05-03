@@ -1,7 +1,7 @@
 #pragma db object
 #include <cstdlib>
 #include "odb\core.hxx"
-#include "ServerProvider.h"
+#include "ServerProviders.h"
 namespace Models
 {
 	class Instance
@@ -16,8 +16,8 @@ namespace Models
 		std::string getInstanceId();
 		Models::Instance setInstanceId(const std::string &instanceId);
 
-		ServerProvider getServerProvider();
-		Models::Instance setServerProvider(ServerProvider provider);
+		ServerProviders::ServerProvider getServerProvider();
+		Models::Instance setServerProvider(ServerProviders::ServerProvider provider);
 	private:
 		friend class odb::access;
 		Instance() {}
@@ -29,6 +29,6 @@ namespace Models
 
 		std::string instanceId;
 
-		ServerProvider provider;
+		ServerProviders::ServerProvider provider;
 	};
 }

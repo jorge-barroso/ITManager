@@ -24,6 +24,17 @@ uint16_t Models::Database::getId()
 	return this->id;
 }
 
+Models::Database Models::Database::setAlias(std::string const & alias)
+{
+	this->alias = alias;
+	return *this;
+}
+
+std::string Models::Database::getAlias()
+{
+	return this->alias;
+}
+
 Models::Database Models::Database::setUrl(std::string const& url)
 {
 	this->url = url;

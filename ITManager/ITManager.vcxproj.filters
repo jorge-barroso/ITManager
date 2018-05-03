@@ -43,6 +43,12 @@
     <Filter Include="Source Files\AWS">
       <UniqueIdentifier>{4a7c0f15-ef77-4872-b895-3432b4a08a09}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\DataModels\Base">
+      <UniqueIdentifier>{d4cc2e52-ccd5-46f9-b1a2-f42a946b7515}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DataModels\ManyToMany">
+      <UniqueIdentifier>{510e4f7c-1ddf-480d-af3f-ab04c30d1c24}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -81,21 +87,6 @@
     <ClInclude Include="HashManager.h">
       <Filter>Header Files\Hasing</Filter>
     </ClInclude>
-    <ClInclude Include="Database.h">
-      <Filter>Header Files\DataModels</Filter>
-    </ClInclude>
-    <ClInclude Include="Environment.h">
-      <Filter>Header Files\DataModels</Filter>
-    </ClInclude>
-    <ClInclude Include="Instance.h">
-      <Filter>Header Files\DataModels</Filter>
-    </ClInclude>
-    <ClInclude Include="S3Bucket.h">
-      <Filter>Header Files\DataModels</Filter>
-    </ClInclude>
-    <ClInclude Include="ServerProvider.h">
-      <Filter>Header Files\DataModels</Filter>
-    </ClInclude>
     <ClInclude Include="S3Manager.h">
       <Filter>Header Files\AWS</Filter>
     </ClInclude>
@@ -111,8 +102,32 @@
     <ClInclude Include="InstanceManager.h">
       <Filter>Header Files\AWS</Filter>
     </ClInclude>
+    <ClInclude Include="Database.h">
+      <Filter>Header Files\DataModels\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Environment.h">
+      <Filter>Header Files\DataModels\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Instance.h">
+      <Filter>Header Files\DataModels\Base</Filter>
+    </ClInclude>
     <ClInclude Include="Regions.h">
-      <Filter>Header Files\DataModels</Filter>
+      <Filter>Header Files\DataModels\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="S3Bucket.h">
+      <Filter>Header Files\DataModels\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerProviders.h">
+      <Filter>Header Files\DataModels\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvironmentDatabase.h">
+      <Filter>Header Files\DataModels\ManyToMany</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvironmentInstance.h">
+      <Filter>Header Files\DataModels\ManyToMany</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvironmentS3Bucket.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -140,9 +155,6 @@
     <ClCompile Include="BcryptHashManager.cpp">
       <Filter>Source Files\Hashing</Filter>
     </ClCompile>
-    <ClCompile Include="Environment.cpp">
-      <Filter>Source Files\DataModels</Filter>
-    </ClCompile>
     <ClCompile Include="Database.cpp">
       <Filter>Source Files\DataModels</Filter>
     </ClCompile>
@@ -158,13 +170,7 @@
     <ClCompile Include="Instance.cpp">
       <Filter>Source Files\DataModels</Filter>
     </ClCompile>
-    <ClCompile Include="Region.cpp">
-      <Filter>Source Files\DataModels</Filter>
-    </ClCompile>
     <ClCompile Include="S3Bucket.cpp">
-      <Filter>Source Files\DataModels</Filter>
-    </ClCompile>
-    <ClCompile Include="ServerProvider.cpp">
       <Filter>Source Files\DataModels</Filter>
     </ClCompile>
     <ClCompile Include="S3Manager.cpp">
@@ -181,6 +187,21 @@
     </ClCompile>
     <ClCompile Include="Regions.cpp">
       <Filter>Source Files\DataModels</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerProviders.cpp">
+      <Filter>Source Files\DataModels</Filter>
+    </ClCompile>
+    <ClCompile Include="Environment.cpp">
+      <Filter>Source Files\DataModels</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvironmentInstance.cpp">
+      <Filter>Source Files\DataModels</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvironmentDatabase.cpp">
+      <Filter>Source Files\DataModels</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvironmentS3Bucket.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

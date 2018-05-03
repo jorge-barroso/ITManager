@@ -31,10 +31,10 @@ public:
 		NO_REGION
 	};
 
-	static std::string getRegionName(const Regions::Region region);
-	static Regions::Region getRegionByName(const std::string &name);
+	static std::string toString(const Regions::Region region);
+	static Regions::Region byName(const std::string &name);
 
 private:
 	const static std::array<std::string, 17> RegionsNames;
-	const static  std::unordered_map<std::string, Region> RegionsByName;
+	const static std::unordered_map<std::string, Regions::Region> RegionsByName;
 };

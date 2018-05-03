@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "AESEncryptManager.h"
 
-inline  uint16_t message_size(const char * key, uint16_t pos)
+inline  size_t message_size(const char * key, uint16_t pos)
 {
 	return (strlen(key) - pos - 1);
 }

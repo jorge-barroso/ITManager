@@ -2,7 +2,7 @@
 #include "S3Bucket.h"
 
 
-Models::S3Bucket::S3Bucket(std::string const& key, const Region region) : key(key), region(region) {}
+Models::S3Bucket::S3Bucket(std::string const& key, const Regions::Region region) : key(key), region(region) {}
 
 
 Models::S3Bucket::~S3Bucket() {}
@@ -23,7 +23,7 @@ Models::S3Bucket Models::S3Bucket::setKey(std::string const & key)
 	return *this;
 }
 
-Region Models::S3Bucket::getRegion()
+Regions::Region Models::S3Bucket::getRegion()
 {
 	return this->region;
 }
