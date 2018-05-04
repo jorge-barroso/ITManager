@@ -16,7 +16,7 @@ void Properties::load(Files::FileReader &reader)
 	while (reader.readLine(line))
 	{
 		pos = line.find('=', 1);
-		this->setProperty(line.substr(0, pos), line.substr(pos));
+		this->setProperty(line.substr(0, pos), line.substr(pos+1));
 	}
 }
 

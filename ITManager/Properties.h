@@ -11,7 +11,7 @@ public:
 	void load(Files::FileReader &reader);
 	void save();
 	void save(Files::FileWriter &fileWriter);
-	std::string getProperty(std::string const& key, std::string const& defaultValue = NULL);
+	std::string getProperty(std::string const& key, std::string const& defaultValue = "");
 	void setProperty(std::string const& key, std::string const& value);
 	std::unordered_map<std::string, std::string> getPropertyMap();
 private:

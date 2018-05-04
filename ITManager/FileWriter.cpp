@@ -14,6 +14,7 @@ Files::FileWriter::FileWriter(std::string const & filename, const bool append, c
 
 Files::FileWriter::~FileWriter()
 {
+	this->fileStream.flush();
 	this->fileStream.close();
 }
 

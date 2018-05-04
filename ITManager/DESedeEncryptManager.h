@@ -1,11 +1,5 @@
 #pragma once
 #include "EncryptManager.h"
-#include "DesWeakKeyException.h"
-#include "openssl/des.h"
-#include "openssl/rand.h"
-#include "Base64.h"
-#include <random>
-#include <stdexcept>
 
 namespace Encryption
 {
@@ -13,6 +7,7 @@ namespace Encryption
 		public EncryptManager
 	{
 	public:
-		DESedeEncryptManager(const unsigned char *key_data, const unsigned char *salt, const uint16_t nrounds);
+		static const std::string encrypt(const unsigned char *salt, const uint16_t nrounds, const unsigned char * key, size_t key_size);
+		static const std::string decrypt(const unsigned char *salt, const uint16_t nrounds, char * ciphertext);
 	};
 }

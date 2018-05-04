@@ -49,6 +49,12 @@
     <Filter Include="Header Files\DataModels\ManyToMany">
       <UniqueIdentifier>{510e4f7c-1ddf-480d-af3f-ab04c30d1c24}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\DataModels\Base">
+      <UniqueIdentifier>{214c3c44-0bfb-4d94-81b2-d68c21208527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DataModels\ManyToMany">
+      <UniqueIdentifier>{c9b81dbd-fc7f-43e6-99c4-c48487deb9c7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -127,7 +133,7 @@
       <Filter>Header Files\DataModels\ManyToMany</Filter>
     </ClInclude>
     <ClInclude Include="EnvironmentS3Bucket.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\DataModels\ManyToMany</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -155,9 +161,6 @@
     <ClCompile Include="BcryptHashManager.cpp">
       <Filter>Source Files\Hashing</Filter>
     </ClCompile>
-    <ClCompile Include="Database.cpp">
-      <Filter>Source Files\DataModels</Filter>
-    </ClCompile>
     <ClCompile Include="FileWriter.cpp">
       <Filter>Source Files\Files</Filter>
     </ClCompile>
@@ -166,12 +169,6 @@
     </ClCompile>
     <ClCompile Include="HashManager.cpp">
       <Filter>Source Files\Hashing</Filter>
-    </ClCompile>
-    <ClCompile Include="Instance.cpp">
-      <Filter>Source Files\DataModels</Filter>
-    </ClCompile>
-    <ClCompile Include="S3Bucket.cpp">
-      <Filter>Source Files\DataModels</Filter>
     </ClCompile>
     <ClCompile Include="S3Manager.cpp">
       <Filter>Source Files\AWS</Filter>
@@ -185,23 +182,32 @@
     <ClCompile Include="InstanceManager.cpp">
       <Filter>Source Files\AWS</Filter>
     </ClCompile>
-    <ClCompile Include="Regions.cpp">
-      <Filter>Source Files\DataModels</Filter>
-    </ClCompile>
-    <ClCompile Include="ServerProviders.cpp">
-      <Filter>Source Files\DataModels</Filter>
+    <ClCompile Include="Database.cpp">
+      <Filter>Source Files\DataModels\Base</Filter>
     </ClCompile>
     <ClCompile Include="Environment.cpp">
-      <Filter>Source Files\DataModels</Filter>
+      <Filter>Source Files\DataModels\Base</Filter>
     </ClCompile>
-    <ClCompile Include="EnvironmentInstance.cpp">
-      <Filter>Source Files\DataModels</Filter>
+    <ClCompile Include="Instance.cpp">
+      <Filter>Source Files\DataModels\Base</Filter>
     </ClCompile>
-    <ClCompile Include="EnvironmentDatabase.cpp">
-      <Filter>Source Files\DataModels</Filter>
+    <ClCompile Include="Regions.cpp">
+      <Filter>Source Files\DataModels\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="S3Bucket.cpp">
+      <Filter>Source Files\DataModels\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerProviders.cpp">
+      <Filter>Source Files\DataModels\Base</Filter>
     </ClCompile>
     <ClCompile Include="EnvironmentS3Bucket.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\DataModels\ManyToMany</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvironmentInstance.cpp">
+      <Filter>Source Files\DataModels\ManyToMany</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvironmentDatabase.cpp">
+      <Filter>Source Files\DataModels\ManyToMany</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
